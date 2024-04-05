@@ -23,7 +23,7 @@ import { Fade } from "@mui/material";
 
 
 const pageTitles = {
-	index: "Главнвя",
+	index: "Главная",
 	catalog: "Каталог",
 	cart: "Корзина",
 	favorites: "Избранное",

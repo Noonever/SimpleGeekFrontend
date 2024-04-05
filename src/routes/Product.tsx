@@ -32,12 +32,7 @@ import usePageTitle from "../hooks/usePageTitle";
 import { Favorite } from "@mui/icons-material";
 
 import { ShowcaseCarousel } from "../components/ShowcaseCarousel";
-
-import image1 from "../assets/test1.png"
-import image2 from "../assets/test2.png"
-import image3 from "../assets/test3.png"
-import image4 from "../assets/test4.png"
-
+import { getImageLink } from "../utils/image";
 
 export default function Product() {
     usePageTitle('kik')
@@ -52,12 +47,11 @@ export default function Product() {
     })
 
     const images = [
-        <img style={{width: "100%" }} src={image1} />,
-        <img style={{width: "100%" }} src={image2} />,
-        <img style={{width: "100%" }} src={image3} />,
-        <img style={{width: "100%" }} src={image4} />,
+        <img style={{width: "100%" }} src={getImageLink('figurka1')} />,
+        <img style={{width: "100%" }} src={getImageLink('figurka2')} />,
+        <img style={{width: "100%" }} src={getImageLink('figurka3')} />,
+        <img style={{width: "100%" }} src={getImageLink('figurka4')} />,
     ]
-
 
     return (
         <>
@@ -95,7 +89,6 @@ export default function Product() {
                     flexDirection: "column",
                     width: 360,
                     gap: 16,
-                    backgroundColor: 'pink'
                 }}>
                     <Typography variant="h5">О товаре</Typography>
                     <div style={{
@@ -151,7 +144,7 @@ export default function Product() {
                             flexDirection: "column",
                             gap: 8,
                         }}>
-                            <Typography variant="h4">99 999</Typography>
+                            <Typography variant="h4">99 999 ₽</Typography>
                             <Typography variant="body1" color={"typography.success"}>В наличии</Typography>
                         </div>
                         <div style={{

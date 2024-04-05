@@ -333,7 +333,7 @@ export default function Catalog() {
                             defaultValue="exp"
                             autoWidth
                             sx={{
-                                minWidth: 360,
+                                width: 360,
                                 backgroundColor: 'surface.primary',
                             }}
                         >

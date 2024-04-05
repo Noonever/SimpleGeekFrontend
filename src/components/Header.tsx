@@ -22,6 +22,7 @@ import {
 import logo from '../assets/logo.png';
 import { Box } from '@mui/system';
 import { UserState } from '../UserContext';
+import { getImageLink } from '../utils/image';
 
 interface Props {
     userState: UserState,
@@ -68,7 +69,7 @@ export default function Header({ userState, onLoginClick }: Props) {
         return (
             <SectionButtonWrapper onClick={onClick}>
                 <SectionIconWrapper>
-                    <Badge color="error" badgeContent={badgeCount} >
+                    <Badge color="warning" badgeContent={badgeCount} >
                         {icon}
                     </Badge>
                 </SectionIconWrapper>
@@ -81,8 +82,10 @@ export default function Header({ userState, onLoginClick }: Props) {
         width: 56,
         height: 56,
         borderRadius: 8,
-        backgroundColor: "red",
-        overflow: "hidden"
+        overflow: "hidden",
+        display: "flex",
+        justifyContent: "center",
+        position: "relative"
     })
 
     const handleOpenCatalog = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -174,7 +177,7 @@ export default function Header({ userState, onLoginClick }: Props) {
                                     gap: 12
                                 }}>
                                     <CatalogImageWrapper>
-
+                                        <img src={getImageLink('figurka1')}></img>
                                     </CatalogImageWrapper>
                                     <Typography variant='body1'>
                                         Фигурки
@@ -195,7 +198,7 @@ export default function Header({ userState, onLoginClick }: Props) {
                                     gap: 12
                                 }}>
                                     <CatalogImageWrapper>
-
+                                        <img src={getImageLink('vinyl1')}></img>
                                     </CatalogImageWrapper>
                                     <Typography variant='body1'>
                                         Виниловые пластинки

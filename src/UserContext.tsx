@@ -100,13 +100,21 @@ const UserProvider: React.FC<ProviderProps> = ({ children }: ProviderProps) => {
         let favorites = [];
         let notificated = [];
 
+        const localCart = getLocalCart();
+        const localFavorites = getLocalFavorites();
+
         // TODO: if user logged in, merge local and backend states - cart, favorites, notificated
         if (session) {
             const userMeta = session.identity?.metadata_public
             // TODO: parse user meta to get cart and others
+            cart = localCart
+            favorites = localFavorites
+
+            localStorage.setItem('cart', JSON.stringify([]));
+            localStorage.setItem('favorites', JSON.stringify([]));
         } else {
-            cart = getLocalCart()
-            favorites = getLocalFavorites()
+            cart = localCart
+            favorites = localFavorites
         };
         dispatch({ type: 'SET_SESSION', payload: session });
         dispatch({ type: 'UPDATE_CART', payload: cart });

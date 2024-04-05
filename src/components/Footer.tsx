@@ -68,7 +68,7 @@ export default function Footer() {
                         Каталог
                     </TypographyClickable>
                     <TypographyClickable onClick={() => navigate("/faq")} variant="body2">
-                        Faq
+                        FUCK
                     </TypographyClickable>
                 </FooterSection16>
 
@@ -77,7 +77,7 @@ export default function Footer() {
                         Мы в социальных сетях
                     </Typography>
                     <div style={{ display: "flex", justifyContent: "flex-start" }}>
-                        <SocialIcon src={vkIcon} alt="vk" onClick={() => window.open("https://vk.com/simplegeek")} />
+                        <SocialIcon src={vkIcon} alt="vk" onClick={() => window.open("https://vk.com/simplegeeek")} />
                     </div>
                 </FooterSection16>
                 <FooterSection8>

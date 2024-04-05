@@ -61,7 +61,6 @@ export default function ItemCard({
                 borderRadius: 16,
                 display: "flex",
                 justifyContent: "center",
-                alignItems: "center",
                 overflow: "hidden",
             }}>
                 <ImageComponent
@@ -104,7 +103,7 @@ export default function ItemCard({
                         flexDirection: "column",
                     }}>
                         <Typography variant="h6">
-                            {itemData.price}
+                            {itemData.price} ₽
                         </Typography>
                         <div>
                             <Typography variant="body1" style={{
@@ -133,6 +132,7 @@ export default function ItemCard({
                             {isFavorite ? <Favorite sx={{ color: "icon.attention" }} /> : <FavoriteBorder color="secondary" />}
                         </IconButton>
                         <IconButton onClick={(event) => {
+                            isInCart? navigate('/cart'):
                             itemData.isAvailable ? handleAddToCart() : alert("Товар отсутствует в наличии");
                             event.stopPropagation();
                         }} style={{

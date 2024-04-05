@@ -9,3 +9,8 @@ html {
 * {
     user-select: none;
 }
+
+img {
+    object-fit: cover;
+    object-position: center;
+}

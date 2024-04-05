@@ -75,6 +75,7 @@ export function ShowcaseCarousel({ showWindowHeight, showWindowWidth, height, it
                     position: "relative",
                     overflow: "hidden",
                 }}>
+
                     <div style={{
                         height: showWindowHeight,
                         display: "flex",
@@ -89,7 +90,6 @@ export function ShowcaseCarousel({ showWindowHeight, showWindowWidth, height, it
                                 height: "100%",
                                 display: "flex",
                                 justifyContent: "center",
-                                alignItems: "center",
                                 overflow: "hidden",
                             }}>
                                 {item.element}
@@ -100,6 +100,18 @@ export function ShowcaseCarousel({ showWindowHeight, showWindowWidth, height, it
             </div>
 
             <div style={{ position: "relative" }}>
+                <div style={{
+                    position: "absolute",
+                    width: 160,
+                    height: "100%",
+                    zIndex: 1,
+                    background: "none",
+                    border: "4px solid orange",
+                    borderRadius: 16,
+                    top: -4,
+                    left: -4,
+                    boxSizing: "content-box"
+                }}></div>
                 <IconButton onClick={showPrevious} sx={{
                     position: "absolute",
                     top: "50%",
@@ -154,7 +166,6 @@ export function ShowcaseCarousel({ showWindowHeight, showWindowWidth, height, it
                                 height: "100%",
                                 display: "flex",
                                 justifyContent: "center",
-                                alignItems: "center",
                                 overflow: "hidden",
                                 borderRadius: 8
                             }}>
