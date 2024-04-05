@@ -1,23 +1,20 @@
 # Use an official Node runtime as a parent image
-FROM node:latest
+FROM node:lts
 
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-COPY . .
+# Copy the package.json and package-lock.json (if available)
+COPY package*.json ./
 
-# Install dependencies
+# Install project dependencies
 RUN npm install
 
-# Build the app for production
-RUN npm run build
+# Copy the rest of your app's source code from your host to your image filesystem.
+COPY . .
 
-# Install `serve` to serve your app
-RUN npm install -g serve
+# Vite uses port 3000 by default for development, but you can configure this as needed
+EXPOSE 3000
 
-# Serve the app on port 3000
-CMD ["serve", "-s", "dist", "-l", "80"]
-
-# Expose port 3000 to the outside
-EXPOSE 80
+# Command to start the Vite development server
+CMD ["npm", "run", "dev"]
